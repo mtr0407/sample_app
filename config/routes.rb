@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   get '/about' => 'static_pages#about'
   get '/contact' => 'static_pages#contact'
   get '/signup' => 'users#new'
-  post 'signup' => 'users#create'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/signup' => 'users#create'
+  delete '/logout' => 'sessions#destroy'
   resources :users
 end
 
